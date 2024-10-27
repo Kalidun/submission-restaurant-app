@@ -1,3 +1,238 @@
-img {
-  display: block;
+:root {
+	--color-lightest: #e3fdfd;
+	--color-lighter: #cbf1f5;
+	--color-light: #a6e3e9;
+	--color-base: #71c9ce;
+}
+*,
+html {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+body {
+	background-color: var(--color-lightest);
+}
+
+/* Navigation */
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--color-base);
+	color: white;
+	user-select: none;
+	padding: 0rem 1rem;
+
+	transition: all 0.5s ease;
+}
+.nav-links {
+	display: none;
+	gap: 1rem;
+}
+.nav-item {
+	text-decoration: none;
+	color: white;
+	padding: 1rem 0.5rem;
+	transition: all 0.1s ease-in-out;
+	border-radius: 5px;
+}
+.nav-item:hover {
+	background-color: var(--color-light);
+}
+.mobile-menu {
+	display: block;
+	background-color: transparent;
+	border: none;
+	min-width: 44px;
+	min-height: 44px;
+	border-radius: 10px;
+}
+
+/* Jumbotron */
+.jumbotron {
+	width: 100mvw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.jumbotron-image {
+	width: 100%;
+	object-fit: cover;
+	filter: grayscale(50%);
+}
+
+.loading-screen {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: var(--color-base);
+
+	transition: all 0.5s ease-in-out;
+
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+/* Restaurants */
+.restaurants {
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	justify-content: center;
+}
+
+.restaurants-wrapper {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.5rem;
+	padding: 2rem;
+
+	transition: all 0.5s ease;
+}
+
+.restaurant-card {
+	position: relative;
+	padding: 2rem;
+	border-radius: 10px;
+	background-color: var(--color-light);
+	height: 20rem;
+	overflow: hidden;
+	transform: preserve-3d;
+	perspective: 3000px;
+
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.restaurant-cover {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	justify-content: space-between;
+	padding: 1rem;
+	border-radius: 10px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	height: 100%;
+	background-color: var(--color-base);
+	transition: transform 0.5s ease-in-out;
+	transform-origin: 0;
+	transform: rotateY(0deg);
+}
+
+.restaurant-image {
+	width: 100%;
+	object-fit: cover;
+	border-radius: 10px;
+}
+
+.restaurant-info {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.restaurant-city,
+.restaurant-rating {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	background-color: var(--color-lighter);
+	padding: 0.5rem 1rem;
+	border-radius: 10px;
+	margin-bottom: -1.5rem;
+	z-index: 10;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.restaurant-city {
+	transform: translateX(-0.5rem);
+}
+.restaurant-rating {
+	transform: translateX(0.5rem);
+}
+.restaurant-rating i {
+	color: #ffcb05;
+}
+.restaurant-name {
+	text-align: center;
+	margin-bottom: 0.5rem;
+}
+.restaurant-description {
+	text-align: justify;
+	font-size: 0.8rem;
+}
+.restaurant-card:hover{
+	transition: all 0.5s ease;
+	height: fit-content;
+}
+.restaurant-card:hover .restaurant-cover {
+	transform: rotatey(-85deg);
+	transition: all 0.5s ease-in-out;
+}
+
+/* Spinner */
+.spinner {
+	border: 16px solid #f3f3f3;
+	border-top: 16px solid var(--color-base);
+	border-radius: 50%;
+	width: 120px;
+	height: 120px;
+	animation: spin 1s linear infinite;
+}
+
+/* section Config */
+.section-title {
+	text-align: center;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@media screen and (min-width: 640px) {
+	.mobile-menu {
+		display: none;
+	}
+	.nav-links {
+		display: flex;
+	}
+	.restaurants-wrapper {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.restaurant-card{
+		min-height: 26rem;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.restaurants-wrapper {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.jumbotron-image {
+		min-width: 1000px;
+		height: 93vh;
+	}
+
+	.restaurants-wrapper {
+		grid-template-columns: repeat(4, 1fr);
+	}
 }

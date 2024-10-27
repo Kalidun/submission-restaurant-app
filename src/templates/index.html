@@ -1,19 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Restaurant Apps</title>
-  </head>
-  <body>
-    <h1>Restaurant Apps Starter Project</h1>
-    <p>Hallo coders! Anda berhasil menjalankan starter project.</p>
-    <p>
-      Jangan lupa untuk menggunakan salah satu gambar yang berada pada ./images/heros
-      sebagai background hero elemen.
-    </p>
-    <img src="./images/heros/hero-image_1.jpg" width="450" alt="" />
-    <img src="./images/heros/hero-image_2.jpg" width="450" alt="" />
-    <img src="./images/heros/hero-image_3.jpg" width="450" alt="" />
-    <img src="./images/heros/hero-image_4.jpg" width="450" alt="" />
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Nongs Dulu</title>
+		<script src="https://kit.fontawesome.com/f9dc9fae33.js" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<nav aria-label="Navigasi">
+			<button class="mobile-menu nav-item" aria-label="Toggle Menu" aria-expanded="false" tabindex="-1">
+				<i class="fa-solid fa-bars"></i>
+			</button>
+			<h1 aria-label="Nongs Dulu">Nongs Dulu</h1>
+			<div class="nav-links">
+				<a href="#" class="nav-item" aria-label="Go to page Home">Home</a>
+				<a href="#" class="nav-item" aria-label="Go to page Favorite">Favorite</a>
+				<a href="#" class="nav-item" aria-label="Go to page About Us">About Us</a>
+			</div>
+		</nav>
+		<main id="main-content">
+			<section class="jumbotron">
+				<img src="./images/heros/hero-image_2.jpg" alt="Pemandangan restaurant" class="jumbotron-image" />
+			</section>
+
+			<section class="restaurants">
+				<h2 class="section-title">Explore Our Restaurant</h2>
+				<div class="restaurants-wrapper"></div>
+			</section>
+			
+			<section class="loading-screen">
+				<div class="spinner"></div>
+				<h2>Loading...</h2>
+			</section>
+		</main>
+	</body>
 </html>
