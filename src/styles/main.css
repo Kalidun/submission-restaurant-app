@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 :root {
 	--color-lightest: #e3fdfd;
 	--color-lighter: #cbf1f5;
@@ -9,12 +10,26 @@ html {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: "Poppins", sans-serif;
+	font-family: "Montserrat", sans-serif;
 }
 body {
 	background-color: var(--color-lightest);
+	font-family: 'Montserrat', sans-serif;
 }
-
+.skip-to-content {
+	position: absolute;
+	top: -20;
+	left: 0;
+	padding: 1rem;
+	background-color: var(--color-light);
+	color: white;
+	text-align: center;
+	z-index: 100;
+}
+.skip-to-content:focus {
+	top: 20;
+	z-index: 101;
+}
 /* Navigation */
 nav {
 	display: flex;
@@ -24,6 +39,9 @@ nav {
 	color: white;
 	user-select: none;
 	padding: 0rem 1rem;
+	position: sticky;
+	top: 0;
+	z-index: 100;
 
 	transition: all 0.5s ease;
 }
@@ -69,6 +87,7 @@ nav {
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
+	width: 100mvw;
 	background-color: var(--color-base);
 
 	transition: all 0.5s ease-in-out;
@@ -81,8 +100,83 @@ nav {
 	bottom: 0;
 }
 
+/* Sidebar */
+.sidebar {
+	background-color: var(--color-light);
+	color: white;
+	width: 80%;
+	height: 100%;
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+
+	transform: translateX(-100%);
+	transition: all 0.5s ease;
+}
+.sidebar-show {
+	transform: translateX(0);
+}
+.sidebar-menu {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 2px solid var(--color-base);
+}
+.sidebar-title {
+	padding: 1rem;
+	color: black;
+}
+.sidebar-menu-button {
+	min-width: 44px;
+	min-height: 44px;
+	padding: 1rem;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+.sidebar-menu-button:hover {
+	background-color: var(--color-lighter);
+}
+.sidebar-body {
+	padding: 1rem;
+}
+.sidebar-item {
+	text-decoration: none;
+	color: black;
+	padding: 1rem 0.5rem;
+	transition: all 0.1s ease-in-out;
+	border-radius: 5px;
+	display: flex;
+	gap: 1rem;
+}
+.sidebar-item:hover {
+	background-color: var(--color-lightest);
+}
+
+
+/* Search bar */
+.search-bar{
+	display: flex;
+	justify-content: center;
+	padding: 0rem 2rem;
+}
+.search-bar input {
+	padding: 0.5rem 1rem;
+	width: 100%;
+	border-radius: 10px;	
+	border: 1px solid var(--color-light);
+}
+.search-bar input:focus {
+	outline: none;
+	border: 2px solid var(--color-base);
+}
+
 /* Restaurants */
-.restaurants {
+.restaurants,
+.top-restaurant {
 	padding: 1rem;
 	display: flex;
 	flex-direction: column;
@@ -94,7 +188,7 @@ nav {
 	display: grid;
 	grid-template-columns: 1fr;
 	gap: 1.5rem;
-	padding: 2rem;
+	padding: 0.5rem 2rem;
 
 	transition: all 0.5s ease;
 }
@@ -172,13 +266,81 @@ nav {
 	text-align: justify;
 	font-size: 0.8rem;
 }
-.restaurant-card:hover{
+.restaurant-card:hover {
 	transition: all 0.5s ease;
 	height: fit-content;
 }
 .restaurant-card:hover .restaurant-cover {
 	transform: rotatey(-85deg);
 	transition: all 0.5s ease-in-out;
+}
+
+/* top Restaurant */
+.top-restaurant-wrapper {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.5rem;
+	padding: 0.5rem 2rem;
+
+	transition: all 0.5s ease;
+}
+.top-restaurant-card {
+	position: relative;
+	padding: 2rem;
+	border-radius: 10px;
+	background-color: var(--color-light);
+	height: fit-content;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;	
+	justify-content: space-between;
+}
+.top-restaurant-ranking {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 0.5rem 1rem;
+	border-radius: 0 0 10px 10px;
+	background-color: var(--color-base);
+	color: white;
+	z-index: 10;
+}
+.top-restaurant-image {
+	position: relative;
+	width: 100%;
+	object-fit: cover;
+	border-radius: 10px;
+}
+.top-restaurant-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+.top-restaurant-name {
+	text-align: center;
+	margin-bottom: 0.5rem;
+}
+.top-restaurant-detail {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+
+	position:absolute;
+	top: 0;
+	left: 0;
+	padding: 0.5rem 1rem;
+	border-radius: 0 0 10px 10px;
+}
+
+/* Footer */
+footer {
+	background-color: var(--color-base);
+	color: white;
+	padding: 1rem;
+	text-align: center;
 }
 
 /* Spinner */
@@ -212,17 +374,29 @@ nav {
 	.nav-links {
 		display: flex;
 	}
+	.search-bar input {
+		width: 40%;
+	}
 	.restaurants-wrapper {
 		grid-template-columns: repeat(2, 1fr);
 	}
-	.restaurant-card{
+	.restaurant-card {
 		min-height: 26rem;
+	}
+	.top-restaurant-wrapper {
+		grid-template-columns: repeat(2, 1fr);
 	}
 }
 
 @media screen and (min-width: 768px) {
+	.sidebar{
+		width: 20%;
+	}
 	.restaurants-wrapper {
 		grid-template-columns: repeat(3, 1fr);
+	}
+	.top-restaurant-wrapper {
+		grid-template-columns: 1fr 1fr 1fr;
 	}
 }
 
