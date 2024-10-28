@@ -8,19 +8,27 @@
 	</head>
 	<body>
 		<a class="skip-to-content" href="#main-content" aria-label="Skip to main content">Skip to main content</a>
-		<nav aria-label="Navigasi">
-			<button class="mobile-menu nav-item toggle-menu" aria-label="Toggle Menu" aria-expanded="false" tabindex="-1">
-				<i class="fa-solid fa-bars"></i>
-			</button>
-			<h1 aria-label="Nama Aplikasi Nongs Dulu" tabindex="0">Nongs Dulu</h1>
-			<div class="nav-links">
-				<a href="#" class="nav-item" aria-label="Go to page Home">Home</a>
-				<a href="#" class="nav-item" aria-label="Go to page Favorite">Favorite</a>
-				<a href="#" class="nav-item" aria-label="Go to page About Us">About Us</a>
-			</div>
-		</nav>
+		<header>
+			<nav aria-label="Navigasi">
+				<button class="mobile-menu nav-item toggle-menu" aria-label="Toggle Menu" aria-expanded="false" tabindex="0">
+					<i class="fa-solid fa-bars"></i>
+				</button>
+				<h1 aria-label="Nama Aplikasi Nongs Dulu" tabindex="0">Nongs Dulu</h1>
+				<div class="nav-links">
+					<a href="http://localhost:8080/" class="nav-item" aria-label="Go to page Home">Home</a>
+					<a href="#" class="nav-item" aria-label="Go to page Favorite">Favorite</a>
+					<a
+						href="https://www.instagram.com/khalidwirayuda"
+						target="_blank"
+						class="nav-item"
+						aria-label="Go to page About Us"
+						>About Us</a
+					>
+				</div>
+			</nav>
+		</header>
 		<main>
-			<div>
+			<div class="content">
 				<section class="jumbotron">
 					<img src="./images/heros/hero-image_2.jpg" alt="Pemandangan restaurant" class="jumbotron-image" />
 				</section>
@@ -35,11 +43,7 @@
 
 				<section class="top-restaurant">
 					<h2 class="section-title">Top Restaurant</h2>
-					<div class="top-restaurant-wrapper">
-
-						
-
-					</div>
+					<div class="top-restaurant-wrapper"></div>
 				</section>
 			</div>
 
@@ -51,7 +55,7 @@
 					</button>
 				</div>
 				<div class="sidebar-body">
-					<a href="#" class="sidebar-item" aria-label="Go to page Home">
+					<a href="http://localhost:8080/" class="sidebar-item" aria-label="Go to page Home">
 						<i class="fa-solid fa-house"></i>
 						Home
 					</a>
@@ -59,7 +63,12 @@
 						<i class="fa-solid fa-heart"></i>
 						Favorite
 					</a>
-					<a href="#" class="sidebar-item" aria-label="Go to page About Us">
+					<a
+						href="https://www.instagram.com/khalidwirayuda"
+						target="_blank"
+						class="sidebar-item"
+						aria-label="Go to page About Us"
+					>
 						<i class="fa-solid fa-circle-info"></i>
 						About Us
 					</a>

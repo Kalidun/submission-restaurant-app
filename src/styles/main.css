@@ -16,7 +16,11 @@ body {
 	background-color: var(--color-lightest);
 	font-family: 'Montserrat', sans-serif;
 }
+header{
+	display: inline;
+}
 .skip-to-content {
+	max-height: 48px;
 	position: absolute;
 	top: -20;
 	left: 0;

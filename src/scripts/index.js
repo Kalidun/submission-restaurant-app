@@ -36,6 +36,13 @@ async function fetchData(search = "") {
 	}
 
 	restaurantWrapper.innerHTML = ""
+	if(filteredData.length === 0) {
+		restaurantWrapper.innerHTML = `
+			<div class="no-restaurant" aria-label="Tidak ada restoran yang ditemukan">
+				<h2 class="no-restaurant-title">Restoran tidak ditemukan</h2>
+			</div>
+		`
+	}
 	filteredData.forEach((restaurant) => {
 		const card = `
       <div class="restaurant-card" id="${restaurant.id}" tabindex="0" aria-label="Restaurant ${restaurant.name} di kota ${restaurant.city} dengan rating ${restaurant.rating}">
@@ -112,6 +119,7 @@ toggleMenuButton.forEach((button) => {
 			sidebar.classList.remove("sidebar-show")
 		} else {
 			sidebar.classList.add("sidebar-show")
+			document.querySelector('.sidebar-menu-button').focus()
 		}
 	})
 })
