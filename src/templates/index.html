@@ -3,11 +3,20 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Aplikasi Nongs Dulu" />
+		<meta name="theme-color" content="#171717" />
+
+		<link rel="apple-touch-icon" href="/icons/icon-128x128.png" />
+		<link rel="icon" href="./favicon.png" />
+
 		<title>Nongs Dulu</title>
+
+		<link rel="manifest" href="./app.webmanifest" />
+
 		<script src="https://kit.fontawesome.com/f9dc9fae33.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
-		<a class="skip-to-content" href="#main-content" aria-label="Skip to main content">Skip to main content</a>
+		<a class="skip-to-content" href="#content" aria-label="Skip to main content">Skip to main content</a>
 		<header>
 			<nav aria-label="Navigasi">
 				<button class="mobile-menu nav-item toggle-menu" aria-label="Toggle Menu" aria-expanded="false" tabindex="0">
@@ -27,33 +36,20 @@
 				</div>
 			</nav>
 		</header>
-		<main>
-			<div class="content">
-				<section class="jumbotron">
-					<img src="./images/heros/hero-image_2.jpg" alt="Pemandangan restaurant" class="jumbotron-image" />
-				</section>
+		<main id="main-content">
+			<section class="jumbotron">
+				<img src="./images/heros/hero-image_2.jpg" alt="Pemandangan restaurant" class="jumbotron-image" />
+			</section>
 
-				<section class="restaurants" id="main-content">
-					<h2 class="section-title">Explore Our Restaurant</h2>
-					<div class="search-bar">
-						<input type="text" class="search" placeholder="Search Restaurant" id="searchRestaurant" />
-					</div>
-					<div class="restaurants-wrapper"></div>
-				</section>
-
-				<section class="top-restaurant">
-					<h2 class="section-title">Top Restaurant</h2>
-					<div class="top-restaurant-wrapper"></div>
-				</section>
-			</div>
+			<section class="restaurants" id="content">
+				<h2 class="section-title">Explore Our Restaurant</h2>
+				<div class="search-bar">
+					<input type="text" class="search" placeholder="Search Restaurant" id="searchRestaurant" />
+				</div>
+				<div class="restaurants-wrapper"></div>
+			</section>
 
 			<aside class="sidebar">
-				<div class="sidebar-menu">
-					<h1 class="sidebar-title" aria-label="Nama Aplikasi Nongs Dulu">Nongs Dulu</h1>
-					<button class="sidebar-menu-button toggle-menu" tabindex="0" aria-label="toggle Sidebar Menu">
-						<i class="fa-solid fa-arrow-left"></i>
-					</button>
-				</div>
 				<div class="sidebar-body">
 					<a href="http://localhost:8080/" class="sidebar-item" aria-label="Go to page Home">
 						<i class="fa-solid fa-house"></i>
