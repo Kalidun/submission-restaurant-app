@@ -12,38 +12,43 @@ const RestaurantReviewInitiator = {
     });
   },
 
-  async _onSubmit(){
+  async _onSubmit() {
     const name = this._form.elements['name'].value;
     const review = this._form.elements['review'].value;
     const id = this._restaurantId.id;
 
     if (!name || !review) {
       alert('Review tidak boleh kosong!');
-      return;
+      return 0;
     }
 
-    const response = await fetch(API_ENDPOINT.POST_REVIEW, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ id, name, review }),
-    });
+    try {
+      const response = await fetch(API_ENDPOINT.POST_REVIEW, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ id, name, review }),
+      });
 
-    if (!response.ok) {
-      alert('Gagal menambahkan review!');
-      console.log(response);
-      return;
+      if (!response.ok) {
+        throw new Error(`Failed to submit review: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+
+      this._form.reset();
+
+      this._renderReview(data.customerReviews);
+    } catch (error) {
+      console.error('Error while submitting review:', error);
+      alert('Gagal menambahkan review! Silakan coba lagi nanti.');
     }
-
-    this._form.reset();
-    const data = await response.json();
-    this._renderReview(data.customerReviews);
   },
 
-  _renderReview(review){
+  _renderReview(reviews) {
     this._reviewContainer.innerHTML = '';
-    review.forEach((review) => {
+    reviews.forEach((review) => {
       this._reviewContainer.innerHTML += `
           <div class="restaurant-review-item">
             <div class="restaurant-review-header">
@@ -51,12 +56,12 @@ const RestaurantReviewInitiator = {
               <div class="restaurant-review-date">${review.date}</div>
             </div>
             <div class="restaurant-review-content">
-            ${review.review}
+              ${review.review}
             </div>
           </div>
       `;
     });
-  }
+  },
 };
 
 export default RestaurantReviewInitiator;

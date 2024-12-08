@@ -11,11 +11,11 @@ class App {
     this._initialAppShell();
   }
 
-  _initialAppShell(){
+  _initialAppShell() {
     DrawerInitiator.init({
       button: this._button,
       drawer: this._drawer,
-      content: this._content
+      content: this._content,
     });
   }
 
@@ -23,6 +23,14 @@ class App {
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url];
     this._content.innerHTML = await page.render();
+
+    const skipLinkElem = document.querySelector('.skip-to-content');
+    skipLinkElem.addEventListener('click', (event) => {
+      event.preventDefault();
+      document.querySelector('#content').scrollIntoView();
+      skipLinkElem.blur();
+    });
+
     await page.afterRender();
   }
 }
