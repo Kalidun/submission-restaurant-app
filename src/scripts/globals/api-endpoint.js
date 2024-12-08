@@ -1,4 +1,4 @@
-import CONFIG from "./config"
+import CONFIG from './config';
 
 const API_ENDPOINT = {
   LIST: `${CONFIG.BASE_URL}/list`,
@@ -6,6 +6,6 @@ const API_ENDPOINT = {
   SEARCH: (query) => `${CONFIG.BASE_URL}/search?q=${query}`,
   GET_RESTAURANT_PICTURE: (pictureId) => `${CONFIG.BASE_URL}/images/medium/${pictureId}`,
   POST_REVIEW: `${CONFIG.BASE_URL}/review`,
-}
+};
 
-export default API_ENDPOINT
+export default API_ENDPOINT;

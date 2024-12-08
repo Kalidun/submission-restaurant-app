@@ -1,4 +1,4 @@
-import API_ENDPOINT from "../globals/api-endpoint";
+import API_ENDPOINT from '../globals/api-endpoint';
 
 const RestaurantReviewInitiator = {
   init({ form, restaurantId, reviewContainer }) {
@@ -57,6 +57,6 @@ const RestaurantReviewInitiator = {
       `;
     });
   }
-}
+};
 
 export default RestaurantReviewInitiator;

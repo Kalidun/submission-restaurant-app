@@ -280,67 +280,6 @@ nav {
 	transition: all 0.5s ease-in-out;
 }
 
-/* top Restaurant */
-.top-restaurant-wrapper {
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: 1.5rem;
-	padding: 0.5rem 2rem;
-
-	transition: all 0.5s ease;
-}
-.top-restaurant-card {
-	position: relative;
-	padding: 2rem;
-	border-radius: 10px;
-	background-color: var(--color-light);
-	height: fit-content;
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem;
-	justify-content: space-between;
-}
-.top-restaurant-ranking {
-	position: absolute;
-	top: 0;
-	left: 0;
-	padding: 0.5rem 1rem;
-	border-radius: 0 0 10px 10px;
-	background-color: var(--color-base);
-	color: white;
-	z-index: 10;
-}
-.top-restaurant-image {
-	position: relative;
-	width: 100%;
-	object-fit: cover;
-	border-radius: 10px;
-}
-.top-restaurant-info {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-}
-.top-restaurant-name {
-	text-align: center;
-	margin-bottom: 0.5rem;
-}
-.top-restaurant-detail {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	width: 100%;
-
-	position: absolute;
-	top: 0;
-	left: 0;
-	padding: 0.5rem 1rem;
-	border-radius: 0 0 10px 10px;
-}
-
-
 /* Detail */
 .detail {
 	padding: 1rem 2rem;
@@ -581,7 +520,7 @@ footer {
 	}
 
 	.restaurants-wrapper {
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: repeat(3, 1fr);
 	}
 
 	.restaurant-detail {
@@ -599,5 +538,10 @@ footer {
 	}
 	.restaurant-review-form, .restaurant-review-list {
 		width: 50%;
+	}
+}
+@media screen and (min-width: 1400px) {
+	.restaurants-wrapper {
+		grid-template-columns: repeat(4, 1fr);
 	}
 }

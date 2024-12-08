@@ -1,5 +1,5 @@
-import { createFavoriteButtonTemplate, createUnfavoriteButtonTemplate } from "../views/templates/template-creator";
-import FavoriteRestaurantIdb from "../data/favorite-restaurant-idb";
+import { createFavoriteButtonTemplate, createUnfavoriteButtonTemplate } from '../views/templates/template-creator';
+import FavoriteRestaurantIdb from '../data/favorite-restaurant-idb';
 const favoriteButtonInitiator = {
   async init({ favoriteButton, restaurant }) {
     this._favoriteButton = favoriteButton;
@@ -10,7 +10,7 @@ const favoriteButtonInitiator = {
   async _renderButton() {
     const { id } = this._restaurant;
 
-    if(await this._isRestaurantExist(id)){
+    if (await this._isRestaurantExist(id)){
       this._renderFavoriteButton();
     } else {
       this._renderUnfavoriteButton();
@@ -21,21 +21,21 @@ const favoriteButtonInitiator = {
     return !!restaurant;
   },
   _renderFavoriteButton() {
-    this._favoriteButton.classList.add("favorite");
+    this._favoriteButton.classList.add('favorite');
     this._favoriteButton.innerHTML = createFavoriteButtonTemplate();
-    this._favoriteButton.addEventListener("click", async () => {
+    this._favoriteButton.addEventListener('click', async () => {
       await FavoriteRestaurantIdb.deleteRestaurant(this._restaurant.id);
       this._renderButton();
     });
   },
   _renderUnfavoriteButton() {
-    this._favoriteButton.classList.remove("favorite");
+    this._favoriteButton.classList.remove('favorite');
     this._favoriteButton.innerHTML = createUnfavoriteButtonTemplate();
-    this._favoriteButton.addEventListener("click", async () => {
+    this._favoriteButton.addEventListener('click', async () => {
       await FavoriteRestaurantIdb.putRestaurant(this._restaurant);
       this._renderButton();
     });
   }
-}
+};
 
-export default favoriteButtonInitiator
+export default favoriteButtonInitiator;

@@ -1,4 +1,4 @@
-import API_ENDPOINT from "../globals/api-endpoint";
+import API_ENDPOINT from '../globals/api-endpoint';
 
 class RestaurantCard extends HTMLElement {
   constructor() {
@@ -11,9 +11,9 @@ class RestaurantCard extends HTMLElement {
   }
 
   _emptyContent() {
-    this.innerHTML = "";
+    this.innerHTML = '';
   }
-	
+
   _render() {
     this._emptyContent();
 
@@ -43,4 +43,4 @@ class RestaurantCard extends HTMLElement {
   }
 }
 
-customElements.define("restaurant-card", RestaurantCard);
+customElements.define('restaurant-card', RestaurantCard);

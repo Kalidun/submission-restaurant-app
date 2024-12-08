@@ -1,7 +1,7 @@
-import API_ENDPOINT from "../../globals/api-endpoint"
+import API_ENDPOINT from '../../globals/api-endpoint';
 
 const restaurantDetailTemplate = (restaurant) => {
-	return `
+  return `
   <div class="restaurant-detail-wrapper">
 	  <h2 class="restaurant-name">${restaurant.name}</h2>
 	  <div class="restaurant-detail">
@@ -21,11 +21,11 @@ const restaurantDetailTemplate = (restaurant) => {
       <div class="restaurant-menu-list">
         <ol class="restaurant-menu-food">
           <h4 class="restaurant-menu-food-title">Makanan</h4>
-        ${restaurant.menus.foods.map((food) => `<li>${food.name}</li>`).join("")}
+        ${restaurant.menus.foods.map((food) => `<li>${food.name}</li>`).join('')}
         </ol>
         <ol class="restaurant-menu-drink">
           <h4 class="restaurant-menu-drink-title">Minuman</h4>
-        ${restaurant.menus.drinks.map((drink) => `<li>${drink.name}</li>`).join("")}
+        ${restaurant.menus.drinks.map((drink) => `<li>${drink.name}</li>`).join('')}
         </ol>
       </div>
     </div>
@@ -39,8 +39,8 @@ const restaurantDetailTemplate = (restaurant) => {
         </form>
         <div class="restaurant-review-list" id="reviewContainer">
         ${restaurant.customerReviews
-        .map(
-          (review) => `
+    .map(
+      (review) => `
           <div class="restaurant-review-item">
             <div class="restaurant-review-header">
               <div class="restaurant-review-name">${review.name}</div>
@@ -51,25 +51,25 @@ const restaurantDetailTemplate = (restaurant) => {
             </div>
           </div>
           `,
-        )
-        .join("")}
+    )
+    .join('')}
         </div>
       </div>
     </div>
   </div>
-  `
-}
+  `;
+};
 
 const createFavoriteButtonTemplate = () => `
   <button aria-label="favorite this restaurant" id="favoriteButton" class="favorite">
     <i class="fa-solid fa-star" aria-hidden="true"></i>  
   </button>
-`
+`;
 
 const createUnfavoriteButtonTemplate = () => `
   <button aria-label="unfavorite this restaurant" id="favoriteButton" class="favorite">
     <i class="fa-regular fa-star" aria-hidden="true"></i>
   </button>
-`
+`;
 
-export { restaurantDetailTemplate, createFavoriteButtonTemplate, createUnfavoriteButtonTemplate }
+export { restaurantDetailTemplate, createFavoriteButtonTemplate, createUnfavoriteButtonTemplate };

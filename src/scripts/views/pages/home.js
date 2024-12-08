@@ -1,8 +1,8 @@
-import RestaurantDbSource from "../../data/restaurantDb-source"
+import RestaurantDbSource from '../../data/restaurantDb-source';
 
 const Home = {
-	async render() {
-		return `
+  async render() {
+    return `
       <section class="jumbotron">
 				<img src="./images/heros/hero-image_2.jpg" alt="Pemandangan restaurant" class="jumbotron-image" />
 			</section>
@@ -14,18 +14,18 @@ const Home = {
 				</div>
 				<div class="restaurants-wrapper"></div>
 			</section>
-    `
-	},
-	async afterRender() {
-		const restaurants = await RestaurantDbSource.allRestaurants()
-		const restaurantsContainer = document.querySelector(".restaurants-wrapper")
+    `;
+  },
+  async afterRender() {
+    const restaurants = await RestaurantDbSource.allRestaurants();
+    const restaurantsContainer = document.querySelector('.restaurants-wrapper');
 
-		restaurants.forEach((restaurant) => {
-			const restaurantCard = document.createElement("restaurant-card")
-			restaurantCard.restaurant = restaurant
-			restaurantsContainer.appendChild(restaurantCard)
-		})
-	},
-}
+    restaurants.forEach((restaurant) => {
+      const restaurantCard = document.createElement('restaurant-card');
+      restaurantCard.restaurant = restaurant;
+      restaurantsContainer.appendChild(restaurantCard);
+    });
+  },
+};
 
-export default Home
+export default Home;
