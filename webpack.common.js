@@ -53,13 +53,13 @@ module.exports = {
 						cacheName: "restaurant-api",
 					},
 				},
-        {
-          urlPattern: ({ url }) => url.href.startsWith("https://restaurant-api.dicoding.dev/images/medium/"),
-          handler: "StaleWhileRevalidate",
-          options: {
-            cacheName: "restaurant-image-api",
-          },
-        },
+				{
+					urlPattern: ({ url }) => url.href.startsWith("https://restaurant-api.dicoding.dev/images/medium/"),
+					handler: "StaleWhileRevalidate",
+					options: {
+						cacheName: "restaurant-image-api",
+					},
+				},
 				{
 					urlPattern: ({ url }) => url.href.startsWith("https://kit.fontawesome.com"),
 					handler: "CacheFirst",

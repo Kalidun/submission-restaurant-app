@@ -1,6 +1,8 @@
 import * as WorkboxWindow from "workbox-window"
+import CONFIG from "../globals/config"
 
 const swRegister = async () => {
+	if(CONFIG.NODE_ENV !== "production") return
 	if (!("serviceWorker" in navigator)) {
 		console.log("Service Worker not supported in the browser")
 		return

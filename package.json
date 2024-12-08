@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start-dev": "webpack-dev-server --config webpack.dev.js --open",
+    "start-dev": "webpack-dev-server --config webpack.dev.js --hot --open",
     "build": "webpack --config webpack.prod.js",
     "serve": "http-server dist",
     "test": "jest",
@@ -41,6 +41,7 @@
     "workbox-webpack-plugin": "^7.3.0"
   },
   "dependencies": {
+    "idb": "^8.0.0",
     "regenerator-runtime": "^0.14.0",
     "workbox-window": "^7.3.0"
   }
