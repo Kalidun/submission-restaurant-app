@@ -1,5 +1,5 @@
 const CONFIG = {
-  NODE_ENV: 'development',
+  NODE_ENV: 'production',
   BASE_URL: 'https://restaurant-api.dicoding.dev',
   DB_NAME: 'favorite-restaurant',
   DB_VERSION: 1,
