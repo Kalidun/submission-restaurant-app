@@ -5,7 +5,10 @@ const Home = {
   async render() {
     return `
       <section class="jumbotron">
-				<img src="./images/heros/hero-image_2.jpg" alt="Pemandangan restaurant" class="jumbotron-image" />
+        <picture>
+          <source media="(max-width: 600px)" srcset="./images/heros/hero-image_2-small.jpg">
+          <img src="./images/heros/hero-image_2-large.jpg" alt="Pemandangan restaurant" class="jumbotron-image" />
+        </picture>
 			</section>
 
 			<section class="restaurants" id="content">

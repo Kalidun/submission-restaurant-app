@@ -74,13 +74,13 @@ nav {
 
 /* Jumbotron */
 .jumbotron {
-	width: 100mvw;
+	width: 100vw;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 .jumbotron-image {
-	width: 100%;
+	width: 100vw 	;
 	object-fit: cover;
 	filter: grayscale(50%);
 }

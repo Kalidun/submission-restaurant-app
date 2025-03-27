@@ -30,7 +30,7 @@ class RestaurantCard extends HTMLElement {
               ${this._restaurant.rating}
             </div>
           </div>
-          <img src="${API_ENDPOINT.GET_RESTAURANT_PICTURE(this._restaurant.pictureId)}" class="restaurant-card-image" alt="Foto Restoran">
+          <img src="${API_ENDPOINT.GET_RESTAURANT_PICTURE(this._restaurant.pictureId)}" class="lazyload restaurant-card-image" alt="Foto Restoran">
           <h2 class="restaurant-card-name" aria-label="Restaurant ${this._restaurant.name}">${this._restaurant.name}</h2>
         </div>
         <div class="restaurant-card-back">
